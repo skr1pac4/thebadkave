@@ -1,0 +1,604 @@
+{
+  "schemaVersion": "1.0",
+  "purpose": "Human- and AI-readable design token handoff",
+  "source": {
+    "fileKey": "kVhazeLj50W84dZD5ENgXE",
+    "collections": ["coreTypo", "сolors", "componentTypo"],
+    "variableCount": 153,
+    "coverage": {
+      "colorVariables": 33,
+      "coreTypographyVariables": 72,
+      "componentTypographyVariables": 48,
+      "compositeTypographyTokens": 20,
+      "unmappedVariables": 0
+    }
+  },
+  "conventions": {
+    "references": "Paths in ref fields resolve from the JSON root.",
+    "colorAlpha": "Alpha belongs to the color, not to the entire UI element.",
+    "typographyComposition": "Resolve fontRef, then apply the token's size, line height, letter spacing and text case.",
+    "platformOverrides": "For core typography, select platform-specific fontRef and letterSpacing.",
+    "fontStyle": "Exact Figma font style name; may encode width and weight together.",
+    "units": {
+      "fontSize": "px",
+      "lineHeight": "not specified by FLOAT variables",
+      "letterSpacing": "not specified by FLOAT variables"
+    },
+    "precision": "Insignificant floating-point noise is normalized. Hex colors use 8-bit channels; error color retains source sRGB channels.",
+    "textCase": {
+      "uppercase": "UPPERCASE",
+      "none": "NONE"
+    }
+  },
+  "modes": {
+    "color": {
+      "available": ["dark"],
+      "default": "dark",
+      "sourceNames": {
+        "dark": "Dark"
+      }
+    },
+    "coreTypography": {
+      "available": ["ios", "android"],
+      "default": "ios",
+      "sourceNames": {
+        "ios": "iOS",
+        "android": "Andriod"
+      }
+    },
+    "componentTypography": {
+      "available": ["default"],
+      "sourceNames": {
+        "default": "Mode 1"
+      },
+      "platform": "not specified"
+    }
+  },
+  "color": {
+    "palette": {
+      "canvas": {
+        "hex": "#030303"
+      },
+      "white": {
+        "hex": "#FFFFFF"
+      },
+      "black": {
+        "hex": "#000000"
+      },
+      "scrim": {
+        "hex": "#0F0F0F"
+      },
+      "accent": {
+        "hex": "#E93C3F"
+      },
+      "green": {
+        "hex": "#50D273"
+      },
+      "yellow": {
+        "hex": "#FBBC05"
+      },
+      "blue": {
+        "hex": "#49BCFF"
+      },
+      "error": {
+        "colorSpace": "srgb",
+        "components": [1, 0.10762845724821091, 0.12065577507019043]
+      }
+    },
+    "semantic": {
+      "dark": {
+        "surface": {
+          "base": {
+            "ref": "color.palette.canvas",
+            "alpha": 1,
+            "source": "background/systemBackground"
+          },
+          "secondary": {
+            "ref": "color.palette.white",
+            "alpha": 0.04,
+            "source": "background/secondarySystemBackground"
+          }
+        },
+        "text": {
+          "primary": {
+            "ref": "color.palette.white",
+            "alpha": 1,
+            "source": "foreground/label"
+          },
+          "secondary": {
+            "ref": "color.palette.white",
+            "alpha": 0.72,
+            "source": "foreground/secondaryLabel"
+          },
+          "tertiary": {
+            "ref": "color.palette.white",
+            "alpha": 0.5,
+            "source": "foreground/tertiaryLabel"
+          },
+          "placeholder": {
+            "ref": "color.palette.white",
+            "alpha": 0.5,
+            "source": "foreground/placeholderText"
+          },
+          "inverse": {
+            "ref": "color.palette.black",
+            "alpha": 1,
+            "source": "foreground/inverseLabel"
+          },
+          "disabled": {
+            "ref": "color.palette.white",
+            "alpha": 0.4,
+            "source": "foreground/disabledLabel"
+          }
+        },
+        "border": {
+          "default": {
+            "ref": "color.palette.white",
+            "alpha": 0.08,
+            "source": "border/separator"
+          },
+          "strong": {
+            "ref": "color.palette.white",
+            "alpha": 0.16,
+            "source": "border/strongSeparator"
+          },
+          "accent": {
+            "ref": "color.palette.accent",
+            "alpha": 0.5,
+            "source": "border/separatorTintHalf"
+          }
+        },
+        "fill": {
+          "primary": {
+            "ref": "color.palette.white",
+            "alpha": 0.16,
+            "source": "fill/systemFill"
+          },
+          "secondary": {
+            "ref": "color.palette.white",
+            "alpha": 0.08,
+            "source": "fill/secondarySystemFill"
+          },
+          "tertiary": {
+            "ref": "color.palette.white",
+            "alpha": 0.04,
+            "source": "fill/tertiarySystemFill"
+          }
+        },
+        "interaction": {
+          "accent": {
+            "ref": "color.palette.accent",
+            "alpha": 1,
+            "source": "interactions/tint"
+          },
+          "selected": {
+            "ref": "color.palette.accent",
+            "alpha": 1,
+            "source": "interactions/selected"
+          },
+          "focus": {
+            "ref": "color.palette.white",
+            "alpha": 0.56,
+            "source": "interactions/focus"
+          },
+          "accentDisabled": {
+            "ref": "color.palette.accent",
+            "alpha": 0.3,
+            "source": "interactions/tintDisabled"
+          },
+          "disabled": {
+            "ref": "color.palette.black",
+            "alpha": 0.6,
+            "source": "interactions/disable"
+          },
+          "pressed": {
+            "ref": "color.palette.black",
+            "alpha": 0.2,
+            "source": "interactions/pressed"
+          },
+          "accentBackground": {
+            "ref": "color.palette.accent",
+            "alpha": 0.16,
+            "source": "interactions/tintBackground"
+          },
+          "successBackground": {
+            "ref": "color.palette.green",
+            "alpha": 0.16,
+            "source": "interactions/successBackground"
+          },
+          "yellowBackground": {
+            "ref": "color.palette.yellow",
+            "alpha": 0.16,
+            "source": "interactions/yellowBackground"
+          }
+        },
+        "feedback": {
+          "success": {
+            "ref": "color.palette.green",
+            "alpha": 1,
+            "source": "feedback/success"
+          },
+          "warning": {
+            "ref": "color.palette.yellow",
+            "alpha": 1,
+            "source": "feedback/warning"
+          },
+          "error": {
+            "ref": "color.palette.error",
+            "alpha": 1,
+            "source": "feedback/error"
+          },
+          "info": {
+            "ref": "color.palette.blue",
+            "alpha": 1,
+            "source": "feedback/info"
+          }
+        },
+        "overlay": {
+          "modalScrim": {
+            "ref": "color.palette.scrim",
+            "alpha": 0.8,
+            "source": "overlays/modalScrim"
+          },
+          "toastBackground": {
+            "ref": "color.palette.white",
+            "alpha": 0.08,
+            "source": "overlays/toastBackground"
+          },
+          "barBackground": {
+            "ref": "color.palette.canvas",
+            "alpha": 0.48,
+            "source": "overlays/barBackground"
+          }
+        },
+        "product": {
+          "live": {
+            "ref": "color.palette.accent",
+            "alpha": 1,
+            "source": "product/live"
+          },
+          "rating": {
+            "ref": "color.palette.yellow",
+            "alpha": 1,
+            "source": "product/rating"
+          },
+          "freeze": {
+            "ref": "color.palette.blue",
+            "alpha": 1,
+            "source": "product/freeze"
+          }
+        }
+      }
+    }
+  },
+  "typography": {
+    "fonts": {
+      "iosRegular": {
+        "family": "SF Pro",
+        "style": "Regular"
+      },
+      "iosMedium": {
+        "family": "SF Pro",
+        "style": "Medium"
+      },
+      "iosSemibold": {
+        "family": "SF Pro",
+        "style": "Semibold"
+      },
+      "iosCompressedMedium": {
+        "family": "SF Pro",
+        "style": "Compressed Medium"
+      },
+      "iosCompressedFamilyMedium": {
+        "family": "SF Pro Compressed",
+        "style": "Medium"
+      },
+      "iosCompressedSemibold": {
+        "family": "SF Pro",
+        "style": "Compressed Semibold"
+      },
+      "iosCompressedRegular": {
+        "family": "SF Pro",
+        "style": "Compressed Regular"
+      },
+      "androidRegular": {
+        "family": "Noto Sans",
+        "style": "Regular"
+      },
+      "androidMedium": {
+        "family": "Noto Sans",
+        "style": "Medium"
+      },
+      "androidDisplayMedium": {
+        "family": "Noto Sans",
+        "style": "Display ExtraCondensed Medium"
+      }
+    },
+    "core": {
+      "display": {
+        "sourcePrefix": "largeTitle",
+        "fontSize": 64,
+        "lineHeight": 60,
+        "textCase": "uppercase",
+        "platforms": {
+          "ios": {
+            "fontRef": "typography.fonts.iosCompressedMedium",
+            "letterSpacing": 1
+          },
+          "android": {
+            "fontRef": "typography.fonts.androidDisplayMedium",
+            "letterSpacing": 0
+          }
+        }
+      },
+      "heading1": {
+        "sourcePrefix": "title1",
+        "fontSize": 40,
+        "lineHeight": 40,
+        "textCase": "uppercase",
+        "platforms": {
+          "ios": {
+            "fontRef": "typography.fonts.iosCompressedMedium",
+            "letterSpacing": 0.5
+          },
+          "android": {
+            "fontRef": "typography.fonts.androidDisplayMedium",
+            "letterSpacing": 0
+          }
+        }
+      },
+      "heading2": {
+        "sourcePrefix": "title2",
+        "fontSize": 32,
+        "lineHeight": 34,
+        "textCase": "uppercase",
+        "platforms": {
+          "ios": {
+            "fontRef": "typography.fonts.iosCompressedFamilyMedium",
+            "letterSpacing": 1
+          },
+          "android": {
+            "fontRef": "typography.fonts.androidDisplayMedium",
+            "letterSpacing": 0
+          }
+        }
+      },
+      "heading3": {
+        "sourcePrefix": "title3",
+        "fontSize": 24,
+        "lineHeight": 26,
+        "letterSpacing": 1.5,
+        "textCase": "uppercase",
+        "platforms": {
+          "ios": {
+            "fontRef": "typography.fonts.iosCompressedFamilyMedium"
+          },
+          "android": {
+            "fontRef": "typography.fonts.androidDisplayMedium"
+          }
+        }
+      },
+      "headline": {
+        "sourcePrefix": "headline",
+        "fontSize": 20,
+        "lineHeight": 22,
+        "letterSpacing": 1.5,
+        "textCase": "uppercase",
+        "platforms": {
+          "ios": {
+            "fontRef": "typography.fonts.iosCompressedFamilyMedium"
+          },
+          "android": {
+            "fontRef": "typography.fonts.androidMedium"
+          }
+        }
+      },
+      "bodyLarge": {
+        "sourcePrefix": "bodyLarge",
+        "fontSize": 20,
+        "lineHeight": 28,
+        "letterSpacing": 0,
+        "textCase": "none",
+        "platforms": {
+          "ios": {
+            "fontRef": "typography.fonts.iosRegular"
+          },
+          "android": {
+            "fontRef": "typography.fonts.androidRegular"
+          }
+        }
+      },
+      "body": {
+        "sourcePrefix": "body",
+        "fontSize": 16,
+        "lineHeight": 24,
+        "letterSpacing": 0,
+        "textCase": "none",
+        "platforms": {
+          "ios": {
+            "fontRef": "typography.fonts.iosRegular"
+          },
+          "android": {
+            "fontRef": "typography.fonts.androidRegular"
+          }
+        }
+      },
+      "callout": {
+        "sourcePrefix": "callout",
+        "fontSize": 16,
+        "lineHeight": 22,
+        "letterSpacing": 0,
+        "textCase": "none",
+        "platforms": {
+          "ios": {
+            "fontRef": "typography.fonts.iosMedium"
+          },
+          "android": {
+            "fontRef": "typography.fonts.androidMedium"
+          }
+        }
+      },
+      "subheadline": {
+        "sourcePrefix": "subheadline",
+        "fontSize": 14,
+        "lineHeight": 20,
+        "letterSpacing": 0,
+        "textCase": "none",
+        "platforms": {
+          "ios": {
+            "fontRef": "typography.fonts.iosMedium"
+          },
+          "android": {
+            "fontRef": "typography.fonts.androidMedium"
+          }
+        }
+      },
+      "footnote": {
+        "sourcePrefix": "footnote",
+        "fontSize": 14,
+        "lineHeight": 20,
+        "letterSpacing": 0,
+        "textCase": "none",
+        "platforms": {
+          "ios": {
+            "fontRef": "typography.fonts.iosRegular"
+          },
+          "android": {
+            "fontRef": "typography.fonts.androidRegular"
+          }
+        }
+      },
+      "caption": {
+        "sourcePrefix": "caption1",
+        "fontSize": 12,
+        "lineHeight": 17,
+        "letterSpacing": 0,
+        "textCase": "none",
+        "platforms": {
+          "ios": {
+            "fontRef": "typography.fonts.iosRegular"
+          },
+          "android": {
+            "fontRef": "typography.fonts.androidRegular"
+          }
+        }
+      },
+      "captionSmall": {
+        "sourcePrefix": "caption2",
+        "fontSize": 11,
+        "lineHeight": 14,
+        "letterSpacing": 0,
+        "textCase": "none",
+        "platforms": {
+          "ios": {
+            "fontRef": "typography.fonts.iosRegular"
+          },
+          "android": {
+            "fontRef": "typography.fonts.androidRegular"
+          }
+        }
+      }
+    },
+    "component": {
+      "tabBarLabel": {
+        "sourcePrefix": "tabBarLabel",
+        "fontRef": "typography.fonts.iosRegular",
+        "fontSize": 9,
+        "lineHeight": 11,
+        "letterSpacing": 0.4,
+        "textCase": "uppercase"
+      },
+      "buttonLabel": {
+        "sourcePrefix": "buttonLabel",
+        "fontRef": "typography.fonts.iosSemibold",
+        "fontSize": 16,
+        "lineHeight": 22,
+        "letterSpacing": 0,
+        "textCase": "uppercase"
+      },
+      "buttonLabelSmall": {
+        "sourcePrefix": "buttonLabelSmall",
+        "fontRef": "typography.fonts.iosSemibold",
+        "fontSize": 14,
+        "lineHeight": 22,
+        "letterSpacing": 0,
+        "textCase": "uppercase"
+      },
+      "overline": {
+        "sourcePrefix": "overlineLabel",
+        "fontRef": "typography.fonts.iosCompressedMedium",
+        "fontSize": 14,
+        "lineHeight": 22,
+        "letterSpacing": 1,
+        "textCase": "uppercase"
+      },
+      "pickerValue": {
+        "sourcePrefix": "pickerValue",
+        "fontRef": "typography.fonts.iosCompressedSemibold",
+        "fontSize": 16,
+        "lineHeight": 22,
+        "letterSpacing": 0,
+        "textCase": "uppercase"
+      },
+      "heroValue": {
+        "sourcePrefix": "heroValue",
+        "fontRef": "typography.fonts.iosMedium",
+        "fontSize": 48,
+        "lineHeight": 43.2,
+        "letterSpacing": 0,
+        "textCase": "uppercase"
+      },
+      "dataValue": {
+        "sourcePrefix": "dataValue",
+        "fontRef": "typography.fonts.iosMedium",
+        "fontSize": 16,
+        "lineHeight": 22,
+        "letterSpacing": 0,
+        "textCase": "uppercase"
+      },
+      "dataLabel": {
+        "sourcePrefix": "dataLabel",
+        "fontRef": "typography.fonts.iosCompressedRegular",
+        "fontSize": 16,
+        "lineHeight": 22,
+        "letterSpacing": 0,
+        "textCase": "uppercase"
+      }
+    }
+  },
+  "handoffGuidance": {
+    "status": "Recommendations, not source-authored rules",
+    "rules": [
+      "Use semantic color tokens in UI; use palette values only to define or extend semantic tokens.",
+      "Keep tokens with different meanings separate even when their current values match.",
+      "Use composite typography tokens rather than independently mixing their properties.",
+      "Do not infer a light theme: only dark colors are present.",
+      "Do not invent Android component typography: only core typography has an Android mode.",
+      "Do not interpret fontStyle as numeric fontWeight without checking the actual font face.",
+      "Confirm lineHeight and letterSpacing units before implementation.",
+      "Preserve translucent colors instead of flattening them against one assumed background."
+    ]
+  },
+  "reviewNotes": [
+    {
+      "topic": "References",
+      "detail": "Palette references and font presets are introduced by this handoff structure. The source variables contain direct values, not aliases."
+    },
+    {
+      "topic": "Source naming",
+      "detail": "The source mode Andriod is normalized to android; original source names remain available for mapping."
+    },
+    {
+      "topic": "Font faces",
+      "detail": "SF Pro with style Compressed Medium and SF Pro Compressed with style Medium remain distinct, as in the source."
+    },
+    {
+      "topic": "Interaction states",
+      "detail": "disabled and pressed are translucent black. Whether they are used as overlays or direct fills requires component context."
+    },
+    {
+      "topic": "Missing categories",
+      "detail": "No spacing, radius, elevation or motion variables were found. These categories are not fabricated."
+    }
+  ]
+}
